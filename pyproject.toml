@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pudding"
+dynamic = ["version"]  # Version will be read from package
+description = "The sweetest way to build data pipelines"
+authors = [{name = "Kasim Tasdemir", email = "kasim.tasdemir@gmail.com"}]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["pipeline", "data", "debugging", "components"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "pydantic>=2.0",
+    "typing-extensions>=4.0;python_version<'3.10'",
+]
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio",
+    "ruff",
+    "mypy",
+    "bump-my-version",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/pudding"
+"Bug Reports" = "https://github.com/yourusername/pudding/issues"
+"Source" = "https://github.com/yourusername/pudding"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "pudding.__version__"}
+
+[tool.setuptools.package-data]
+pudding = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by formatter)
+]
+
+[tool.ruff.format]
+# Use same settings as Black
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

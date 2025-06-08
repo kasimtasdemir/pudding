@@ -109,6 +109,8 @@ Use provided templates for:
 - Write tests for new features
 - Maintain or increase coverage
 - Use pytest for testing
+- Use mypy for Pydantic tests
+- Or use `make all` for all tests and fixes
 - Test files mirror source structure
 
 ### 🚀 Release Process

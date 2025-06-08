@@ -7,13 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
-- Folders
+- .
 
 ### Changed
-- Improved Z performance
+- .
 
 ### Fixed
-- Bug in component A
+- .
+- 
+## [0.1.1] - 2025-06-08
+### Added
+- Folders, essential classes for the first MVP.
+- An example pipeline and related document to demonstrate the Pudding pipeline.
 
 ## [0.1.0] - 2025-06-07
 ### Added

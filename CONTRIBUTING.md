@@ -26,11 +26,13 @@ uv pip install -e ".[dev]"
 2. Make your changes and test incrementally  
 ```uv run pytest tests/test_specific.py::test_one_thing```
 1. Add tests for any new functionality
-2. Ensure tests pass: `uv run pytest`
-3. Format & lint code:  `uv run ruff format . && uv run ruff check .`
-4. Commit  `git add .
+2. (Instead of the following steps for test, format and linting, mypy test you can just call `make all`)
+3. Ensure tests pass: `uv run pytest`
+4. Format & lint code:  `uv run ruff format . && uv run ruff check .`
+5. Pydantic test: `uv run mypy src/pudding/ `
+6. Commit  `git add .
 git commit -m "feat: add new capability" `
-1. Submit a pull request!
+1. Submit a pull request to `development`!
 ```
 # 8. Before release
 # Update CHANGELOG.md under [Unreleased]

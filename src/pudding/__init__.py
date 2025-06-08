@@ -1,17 +1,25 @@
-"""Pudding - The sweetest way to build data pipelines"""
+"""Pudding - A novel pipeline framework for debuggable data processing."""
 
-from .core.base_component import BaseComponent
-from .core.config import RunConfig, SampleSaveMode
-from .core.data_envelope import DataEnvelope, DataType
-from .core.registry import ComponentRegistry, register_component
+from .core import (
+    BaseComponent,
+    ComponentMetadata,
+    ComponentResult,
+    DataEnvelope,
+    DataType,
+    RunConfig,
+    SampleSaveMode,
+    registry,
+)
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
+
 __all__ = [
     "BaseComponent",
-    "DataEnvelope",
-    "DataType",
-    "ComponentRegistry",
-    "register_component",
     "RunConfig",
     "SampleSaveMode",
+    "DataEnvelope",
+    "DataType",
+    "ComponentResult",
+    "ComponentMetadata",
+    "registry",
 ]
